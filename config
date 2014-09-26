@@ -2,7 +2,7 @@
   "device_name": "NAME",
   "listening_port": 55555,
   "check_for_updates": true,
-  "storage_path" : "/data/.sync"
+  "storage_path" : "/data/.sync",
   "use_upnp": true,
   "download_limit": 0,
   "upload_limit": 0,

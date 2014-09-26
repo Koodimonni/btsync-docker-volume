@@ -23,6 +23,4 @@ sed -i -e "s/PASS/$PASS/g" config
 sed -i -e "s/USER/$USER/g" config
 sed -i -e "s/NAME/$NAME/g" config
 
-# In case the directory was synced before with another SyncID
-rm $1/.SyncID
 btsync --config config --nodaemon
