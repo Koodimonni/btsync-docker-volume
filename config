@@ -1,19 +1,15 @@
 {
-  "device_name": "btsync-docker-volume",
+  "device_name": "NAME",
   "listening_port": 55555,
   "check_for_updates": true,
+  "storage_path" : "/data/.sync"
   "use_upnp": true,
   "download_limit": 0,
   "upload_limit": 0,
-  "shared_folders": [
-    {
-      "secret": "SECRET_FIELD",
-      "dir": "DIR_FIELD",
-      "use_relay_server": true,
-      "use_tracker": true,
-      "use_dht": false,
-      "search_lan": true,
-      "use_sync_trash": true
-    }
-  ]
+  "webui" :
+  {
+    "listen" : "0.0.0.0:8888",
+    "login" : "USER",
+    "password" : "PASS"
+  }
 }
