@@ -8,7 +8,7 @@ A Docker container for syncing mounted volumes or whatever.
 - Pull the Docker image
 
 ```sh
-docker pull koodimonni/btsync-volume
+docker pull koodimonni/btsync
 ```
 - Run the container
 

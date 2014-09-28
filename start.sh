@@ -14,13 +14,15 @@ if [[ -z "$PASS" ]] ; then
   PASS=$(date +%s | sha256sum | base64 | head -c 32 ; echo)
 fi
 
-echo "Yay I'm running! You can login with these:
-USER:$USER
-PASS:$PASS
-"
-
-sed -i -e "s/PASS/$PASS/g" config
-sed -i -e "s/USER/$USER/g" config
-sed -i -e "s/NAME/$NAME/g" config
+#Only do the replacing once.
+if grep -q PASS config; then
+  sed -i -e "s/PASS/$PASS/g" config
+  sed -i -e "s/USER/$USER/g" config
+  sed -i -e "s/NAME/$NAME/g" config
+  echo "Yay I'm running! You can login with these:
+    USER:$USER
+    PASS:$PASS
+    "
+fi
 
 btsync --config config --nodaemon

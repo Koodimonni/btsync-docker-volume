@@ -14,12 +14,13 @@ RUN curl -o /usr/bin/btsync.tar http://download-new.utorrent.com/endpoint/btsync
 
 RUN cd /usr/bin; tar xvf btsync.tar; rm btsync.tar; rm LICENSE.TXT
 
-ADD config /data/
-ADD start.sh /data/
+RUN mkdir /data
+ADD config /btsync/
+ADD start.sh /btsync/
 
 EXPOSE 8888
 EXPOSE 55555
 
-WORKDIR /data
+WORKDIR /btsync
 
 ENTRYPOINT ["/bin/bash", "./start.sh"]
