@@ -1,0 +1,20 @@
+{
+  "device_name": "NAME",
+  "listening_port": PORT,
+  "check_for_updates": true,
+  "use_upnp": true,
+  "pid_file" : "/btsync/sync.pid",
+  "download_limit": 0,
+  "upload_limit": 0,
+  "shared_folders": [
+    {
+      "secret": "SECRET",
+      "dir": "SYNCDIR",
+      "use_relay_server": true,
+      "use_tracker": true,
+      "use_dht": false,
+      "search_lan": true,
+      "use_sync_trash": true
+    }
+  ]
+}

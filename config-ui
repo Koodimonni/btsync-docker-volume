@@ -1,0 +1,17 @@
+{
+  "device_name": "NAME",
+  "listening_port": PORT,
+  "check_for_updates": true,
+  "storage_path" : "/data/",
+  "use_upnp": true,
+  "pid_file" : "/btsync/sync.pid",
+  "download_limit": 0,
+  "upload_limit": 0,
+  "webui" :
+  {
+    "listen" : "0.0.0.0:8888",
+    "login" : "USER",
+    "password" : "PASS",
+    "api_key": "2WCXYTARBRSSCL3PMT2NKIMJVBFRXPU72PIVCJ73UHMVILX73UGM5RVLF45ETLCEDFBGEH4P6ACYPCSSNXPQY2LP6BB6YPPVJHVGQDZ3KDVNOQT2IBB5ZKM6XZ4CXA3DUMO3KBY"
+  }
+}

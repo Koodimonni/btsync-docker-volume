@@ -27,14 +27,16 @@ fi
 
 if [[ -z "$SYNCDIR" ]] ; then
   SYNCDIR='/data'
+  ls -la $SYNCDIR
 fi
 
 echo "Starting btsync..."
 #CHOOSE IF IT'S VOLUME OR UI
 #Grep config files so we only do the replacing once.
 if [[ "$TYPE" == "VOLUME" ]] ; then
-  cp config-volume config
+  cp -n config-volume config
   if grep -q NAME config; then
+    rm /data/webui.zip
     sed -i -e "s|SECRET|$SECRET|g" config
     sed -i -e "s|SYNCDIR|$SYNCDIR|g" config
     sed -i -e "s|NAME|$NAME|g" config
@@ -48,7 +50,7 @@ if [[ "$TYPE" == "VOLUME" ]] ; then
   fi
 else #It's UI
   #Start the container with UI.
-  cp config-ui config
+  cp -n config-ui config
   if grep -q NAME config; then
     sed -i -e "s|PASS|$PASS|g" config
     sed -i -e "s|USER|$USER|g" config
